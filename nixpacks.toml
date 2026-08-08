@@ -1,5 +1,5 @@
-[phases.setup]
-nixPkgs = ["php84", "php84Packages.composer", "nodejs_20", "npm"]
+[variables]
+NIXPACKS_PHP_VERSION = "8.4"
 
 [phases.install]
 cmds = [
