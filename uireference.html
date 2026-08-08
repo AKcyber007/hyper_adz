@@ -1,0 +1,2846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Hyper Adz - Coimbatore's Largest Digital Signage & Advertising Network</title>
+  <meta name="description" content="Engage hyper-local audiences in Coimbatore with Hyper Adz. Premium indoor digital advertising, screen sales, and rentals by Multitude Solutions.">
+  
+  <!-- Favicon Placeholder -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230A66FF%22/><circle cx=%2250%22 cy=%2250%22 r=%2225%22 fill=%22%23FFFFFF%22/></svg>">
+  
+  <!-- Stylesheet -->
+  <style>
+/*
+ * Hyper Adz - Premium Landing Page Stylesheet
+ * Brand: Hyper Adz (by Multitude Solutions)
+ * Created: 2025 (Established)
+ * Designed for Visual Excellence & High-End Client Review
+ */
+
+/* ==========================================
+   1. GOOGLE FONTS & VARIABLES
+   ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
+
+:root {
+  /* Color System */
+  --primary: #0A66FF;
+  --secondary: #2E8BFF;
+  --accent: #5EA8FF;
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F7FAFC;
+  --text-main: #1A1A1A;
+  --text-muted: #5A6A85;
+  --text-light: #94A3B8;
+  --border-color: #E9EEF5;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #0A66FF 0%, #2E8BFF 100%);
+  --gradient-accent: linear-gradient(135deg, #2E8BFF 0%, #5EA8FF 100%);
+  --gradient-dark: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  --gradient-card-hover: linear-gradient(135deg, rgba(10, 102, 255, 0.03) 0%, rgba(94, 168, 255, 0.05) 100%);
+  --gradient-glow: linear-gradient(180deg, rgba(10, 102, 255, 0.15) 0%, rgba(46, 139, 255, 0.02) 100%);
+  --gradient-text: linear-gradient(135deg, #0A66FF 0%, #5EA8FF 100%);
+  
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(10, 102, 255, 0.03);
+  --shadow-md: 0 12px 30px rgba(10, 102, 255, 0.06);
+  --shadow-lg: 0 24px 60px rgba(10, 102, 255, 0.1);
+  --shadow-glow: 0 0 40px rgba(10, 102, 255, 0.25);
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-shadow: 0 10px 30px rgba(10, 102, 255, 0.05);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: all 0.2s ease;
+  --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  /* Layout Constants */
+  --container-width: 1200px;
+  --header-height: 80px;
+}
+
+/* ==========================================
+   2. RESET & BASE STYLES
+   ========================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-main);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  letter-spacing: -0.01em;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================
+   3. ANIMATIONS
+   ========================================== */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(0.5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes float-reverse {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(12px) rotate(-0.5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes pulse-glow {
+  0% { transform: scale(0.95); opacity: 0.5; box-shadow: 0 0 0 0 rgba(46, 139, 255, 0.4); }
+  70% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 15px rgba(46, 139, 255, 0); }
+  100% { transform: scale(0.95); opacity: 0.5; box-shadow: 0 0 0 0 rgba(46, 139, 255, 0); }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bg-gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.float-animate {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-animate-delay-1 {
+  animation: float-reverse 7s ease-in-out infinite;
+}
+
+.float-animate-delay-2 {
+  animation: float 8s ease-in-out infinite 1s;
+}
+
+.pulse-glow-animate {
+  animation: pulse-glow 3s infinite;
+}
+
+/* ==========================================
+   4. UTILITY COMPONENTS
+   ========================================== */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-padding {
+  padding: 8rem 0;
+  position: relative;
+}
+
+.section-bg-alt {
+  background-color: var(--bg-secondary);
+}
+
+.text-gradient {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 2.25rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition-bounce);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(10, 102, 255, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(10, 102, 255, 0.35);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--border-color);
+  background-color: var(--bg-primary);
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  background-color: rgba(10, 102, 255, 0.02);
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 5rem auto;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+  background: rgba(10, 102, 255, 0.08);
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-full);
+}
+
+.section-desc {
+  font-size: 1.15rem;
+  margin-top: 1rem;
+}
+
+/* Custom SVG Wave Separator */
+.wave-divider {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 2;
+}
+
+.wave-top {
+  top: -1px;
+}
+
+.wave-bottom {
+  bottom: -1px;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+.wave-divider.fill-bg-secondary svg {
+  fill: var(--bg-secondary);
+}
+
+.wave-divider.fill-bg-primary svg {
+  fill: var(--bg-primary);
+}
+
+/* Background Abstract Shapes */
+.abs-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.shape-1 {
+  width: 350px;
+  height: 350px;
+  background: var(--accent);
+  top: 15%;
+  right: -100px;
+}
+
+.shape-2 {
+  width: 450px;
+  height: 450px;
+  background: rgba(10, 102, 255, 0.2);
+  bottom: 10%;
+  left: -200px;
+}
+
+/* ==========================================
+   5. HEADER / NAVIGATION
+   ========================================== */
+.header-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+  transition: var(--transition-smooth);
+}
+
+.header-main.scrolled {
+  height: 70px;
+  box-shadow: 0 10px 30px rgba(10, 102, 255, 0.05);
+}
+
+.header-main .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo Design */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.35rem;
+}
+
+.logo-icon {
+  width: 38px;
+  height: 38px;
+  background: var(--gradient-primary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(10, 102, 255, 0.25);
+}
+
+.logo-icon::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-brand {
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.logo-corp {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-top: -3px;
+}
+
+/* Nav Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  list-style: none;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: var(--transition-smooth);
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--primary);
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Hidden burger checkbox for mobile nav */
+.mobile-nav-toggle {
+  display: none;
+}
+
+.mobile-nav-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.mobile-nav-btn span {
+  width: 25px;
+  height: 2px;
+  background-color: var(--text-main);
+  border-radius: 2px;
+  transition: var(--transition-fast);
+}
+
+/* ==========================================
+   6. HERO SECTION
+   ========================================== */
+.hero-section {
+  padding-top: calc(var(--header-height) + 4rem);
+  padding-bottom: 8rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(100% 100% at 90% 10%, rgba(10, 102, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%), var(--bg-primary);
+}
+
+.hero-section .container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(10, 102, 255, 0.05);
+  border: 1px solid rgba(10, 102, 255, 0.1);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+.hero-headline {
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+}
+
+.hero-subheading {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  max-width: 580px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.hero-cta-btn-icon {
+  margin-left: 8px;
+  transition: var(--transition-fast);
+}
+
+.btn-primary:hover .hero-cta-btn-icon {
+  transform: translateX(4px);
+}
+
+/* Hero CSS Illustration */
+.hero-illustration {
+  position: relative;
+  height: 520px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 480px;
+}
+
+/* Floating screen shapes and frames using CSS styling */
+.ill-screen {
+  position: absolute;
+  background: var(--gradient-dark);
+  border: 6px solid #1E293B;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(10, 102, 255, 0.15);
+  overflow: hidden;
+  z-index: 3;
+}
+
+.ill-screen-main {
+  width: 240px;
+  height: 380px;
+  top: 60px;
+  left: 40px;
+}
+
+.ill-screen-sub {
+  width: 180px;
+  height: 280px;
+  bottom: 40px;
+  right: 20px;
+  border-color: #334155;
+  box-shadow: var(--shadow-md), 0 0 20px rgba(10, 102, 255, 0.1);
+  z-index: 4;
+}
+
+/* Glass card floating */
+.ill-glass-card {
+  position: absolute;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 200px;
+  box-shadow: 0 15px 35px rgba(10, 102, 255, 0.12);
+}
+
+.ill-card-1 {
+  top: 120px;
+  right: 0px;
+}
+
+.ill-card-2 {
+  bottom: 120px;
+  left: -20px;
+}
+
+.ill-card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(10, 102, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.ill-card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.ill-card-val {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.ill-card-lbl {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* Glowing Nodes & Map Dots (Network Concept) */
+.ill-glow-node {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--secondary);
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 0 15px var(--secondary);
+  z-index: 6;
+}
+
+.node-1 { top: 40px; left: 160px; }
+.node-2 { bottom: 90px; right: 190px; }
+.node-3 { top: 220px; left: 20px; }
+
+/* Dynamic Background grid pattern */
+.ill-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(10, 102, 255, 0.08) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  z-index: 1;
+  border-radius: var(--radius-lg);
+  mask-image: radial-gradient(ellipse at center, black, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black, transparent 75%);
+}
+
+.ill-circle-accent {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border: 2px dashed rgba(10, 102, 255, 0.12);
+  border-radius: 50%;
+  top: 80px;
+  left: 60px;
+  z-index: 2;
+  animation: spin-slow 25s linear infinite;
+}
+
+/* Screen Contents Mockup */
+.screen-header-mock {
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.screen-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.screen-dot.active {
+  background: var(--primary);
+}
+
+.screen-body-mock {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 37px);
+}
+
+.screen-tag-mock {
+  align-self: flex-start;
+  font-size: 0.65rem;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.screen-heading-mock {
+  font-family: 'Poppins', sans-serif;
+  color: #FFFFFF;
+  font-size: 1.15rem;
+  line-height: 1.25;
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+.screen-subheading-mock {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.screen-ad-creative {
+  flex-grow: 1;
+  margin-top: 1rem;
+  background: linear-gradient(45deg, rgba(10, 102, 255, 0.1) 0%, rgba(94, 168, 255, 0.1) 100%);
+  border-radius: 8px;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.screen-ad-creative::after {
+  content: 'ADVERTISING NETWORK';
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================
+   7. TRUST SECTION (STATISTICS)
+   ========================================== */
+.trust-section {
+  padding: 5rem 0;
+  margin-top: -4rem;
+  position: relative;
+  z-index: 10;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.stat-card {
+  padding: 2.25rem 2rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-bounce);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: var(--transition-fast);
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(10, 102, 255, 0.15);
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+.stat-number {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+}
+
+.stat-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================
+   8. ABOUT US SECTION
+   ========================================== */
+.about-section {
+  position: relative;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 5rem;
+}
+
+.about-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 480px;
+}
+
+.about-canvas {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 102, 255, 0.04) 0%, rgba(46, 139, 255, 0.08) 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-placeholder-mockup {
+  width: 80%;
+  height: 75%;
+  background: var(--bg-primary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-placeholder-mockup .mockup-header {
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mockup-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.mockup-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--text-light);
+}
+
+.mockup-dot:nth-child(1) { background-color: #EF4444; }
+.mockup-dot:nth-child(2) { background-color: #F59E0B; }
+.mockup-dot:nth-child(3) { background-color: #10B981; }
+
+.mockup-address-bar {
+  width: 60%;
+  height: 18px;
+  background: var(--bg-primary);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  font-size: 0.65rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mockup-body {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mockup-content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+.mockup-chart-bar {
+  height: 8px;
+  background: var(--border-color);
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.mockup-chart-bar.filled-1 { width: 90%; background: var(--primary); }
+.mockup-chart-bar.filled-2 { width: 75%; background: var(--secondary); }
+.mockup-chart-bar.filled-3 { width: 60%; background: var(--accent); }
+.mockup-chart-bar.filled-4 { width: 80%; background: var(--border-color); }
+
+.about-glow-orb {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+  bottom: -40px;
+  right: -40px;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.about-features {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.about-feat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.about-feat-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(10, 102, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.about-feat-text {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.about-text-lead {
+  font-size: 1.15rem;
+  color: var(--text-main);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+.about-text-body {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ==========================================
+   9. SERVICES SECTION
+   ========================================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.service-card {
+  padding: 3rem 2.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  transition: var(--transition-bounce);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+  padding: 1.5px;
+  background: linear-gradient(135deg, transparent, transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  background: var(--gradient-card-hover), var(--bg-primary);
+}
+
+.service-card:hover::after {
+  background: var(--gradient-primary);
+}
+
+.service-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: rgba(10, 102, 255, 0.06);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  transition: var(--transition-smooth);
+}
+
+.service-card:hover .service-icon-wrapper {
+  background: var(--gradient-primary);
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+.service-card h3 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary);
+}
+
+.service-link svg {
+  transition: var(--transition-fast);
+}
+
+.service-card:hover .service-link svg {
+  transform: translateX(4px);
+}
+
+/* ==========================================
+   10. NETWORK SECTION
+   ========================================== */
+.network-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.network-card {
+  padding: 2.25rem 2rem;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-bounce);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.network-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+
+.network-card-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 50%;
+  background: rgba(10, 102, 255, 0.05);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.network-card:hover .network-card-icon {
+  background: rgba(10, 102, 255, 0.1);
+}
+
+.network-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.network-card p {
+  font-size: 0.85rem;
+}
+
+/* Minimal Vector Illustrations inside Network Cards */
+.network-card-ill {
+  height: 60px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.net-ill-mall::before {
+  content: '🏢 MALLS';
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.net-ill-retail::before {
+  content: '🏪 RETAIL';
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.net-ill-apt::before {
+  content: '🏢 RESIDENTIAL';
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.net-ill-theatre::before {
+  content: '🎬 THEATRE';
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.net-ill-restaurant::before {
+  content: '🍽️ DINING';
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.net-ill-cafe::before {
+  content: '☕ CAFES';
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.net-ill-gym::before {
+  content: '💪 GYMS';
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.net-ill-salon::before {
+  content: '✂️ SALONS';
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+/* ==========================================
+   11. WHY CHOOSE US
+   ========================================== */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.why-card {
+  padding: 2.5rem;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-bounce);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 4px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: var(--transition-fast);
+}
+
+.why-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(10, 102, 255, 0.1);
+}
+
+.why-card:hover::before {
+  opacity: 1;
+}
+
+.why-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(10, 102, 255, 0.08);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.why-card:hover .why-icon {
+  transform: rotate(10deg);
+  background: var(--primary);
+  color: #FFFFFF;
+}
+
+.why-card h4 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.why-card p {
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   12. HOW IT WORKS
+   ========================================== */
+.timeline-container {
+  position: relative;
+  margin-top: 5rem;
+  padding: 2rem 0;
+}
+
+/* Horizontal line */
+.timeline-line {
+  position: absolute;
+  top: 60px;
+  left: 5%;
+  right: 5%;
+  height: 4px;
+  background: var(--border-color);
+  z-index: 1;
+}
+
+.timeline-line-fill {
+  height: 100%;
+  width: 66%;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-step {
+  text-align: center;
+  position: relative;
+}
+
+.timeline-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 4px solid var(--border-color);
+  color: var(--text-muted);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem auto;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-bounce);
+}
+
+.timeline-step.active .timeline-badge {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #FFFFFF;
+  box-shadow: 0 0 20px rgba(10, 102, 255, 0.4);
+}
+
+.timeline-step.active h4 {
+  color: var(--primary);
+}
+
+.timeline-step h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-step p {
+  font-size: 0.9rem;
+}
+
+/* Arrow markers between steps for desktop display */
+.timeline-step::after {
+  content: '➔';
+  position: absolute;
+  top: 48px;
+  right: -25px;
+  font-size: 1.5rem;
+  color: var(--secondary);
+  opacity: 0.5;
+}
+
+.timeline-step:last-child::after {
+  display: none;
+}
+
+/* ==========================================
+   13. FEATURE SECTION (TECH DETAILS)
+   ========================================== */
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: 5rem;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-item {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.feature-item-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(10, 102, 255, 0.05);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feature-item-details h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.feature-item-details p {
+  font-size: 0.95rem;
+}
+
+/* Secondary Tech Illustration */
+.tech-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 480px;
+}
+
+.tech-canvas {
+  width: 100%;
+  height: 100%;
+  max-width: 440px;
+  background: var(--gradient-dark);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tech-header-mockup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-title-mockup {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.tech-cloud-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+
+.tech-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.tech-body-mockup {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.tech-bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tech-chart-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tech-label-chart {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.tech-progress-outer {
+  width: 60%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  position: relative;
+}
+
+.tech-progress-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: var(--secondary);
+}
+
+.tech-footer-mockup {
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--text-light);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================
+   14. CALL TO ACTION (CTA)
+   ========================================== */
+.cta-section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.cta-banner {
+  background: var(--gradient-dark);
+  border-radius: var(--radius-lg);
+  padding: 5rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg), 0 0 50px rgba(10, 102, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(10, 102, 255, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.cta-banner h2 {
+  color: #FFFFFF;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1.25rem;
+  font-weight: 800;
+}
+
+.cta-banner p {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-banner .btn-secondary {
+  background: transparent;
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.cta-banner .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #FFFFFF;
+}
+
+/* ==========================================
+   15. FOOTER
+   ========================================== */
+.footer-main {
+  background-color: #0B0F19;
+  color: #FFFFFF;
+  padding: 5rem 0 2.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.footer-brand-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer-brand-section .logo-brand {
+  color: #FFFFFF;
+}
+
+.footer-desc {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+  color: var(--text-light);
+}
+
+.footer-social-link:hover {
+  background: var(--primary);
+  color: #FFFFFF;
+  transform: translateY(-3px);
+}
+
+.footer-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 1.75rem;
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+  padding-left: 4px;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer-info-item {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.footer-info-icon {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.footer-info-val {
+  line-height: 1.4;
+}
+
+.footer-info-val strong {
+  display: block;
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.footer-bottom {
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.footer-gst {
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-copyright {
+  color: var(--text-light);
+}
+
+/* ==========================================
+   16. RESPONSIVE MEDIA QUERIES
+   ========================================== */
+
+/* Laptop / Smaller Desktops (Under 1200px) */
+@media (max-width: 1200px) {
+  :root {
+    --container-width: 960px;
+  }
+  
+  .hero-section .container {
+    gap: 2rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .network-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablets (Under 992px) */
+@media (max-width: 992px) {
+  :root {
+    --container-width: 720px;
+  }
+  
+  .section-padding {
+    padding: 6rem 0;
+  }
+  
+  .hero-section {
+    padding-top: calc(var(--header-height) + 2rem);
+    padding-bottom: 6rem;
+  }
+  
+  .hero-section .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 4rem;
+  }
+  
+  .hero-subheading {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
+  
+  .hero-illustration {
+    height: 440px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .about-visual {
+    order: 2;
+    height: 380px;
+  }
+  
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .tech-visual {
+    height: 380px;
+  }
+  
+  .timeline-line {
+    display: none; /* Hide horizontal timeline line on tablet/mobile */
+  }
+  
+  .timeline-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .timeline-step {
+    display: flex;
+    text-align: left;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  
+  .timeline-badge {
+    margin: 0;
+    flex-shrink: 0;
+  }
+  
+  .timeline-step::after {
+    content: '↓';
+    top: 55px;
+    left: 20px;
+    right: auto;
+  }
+  
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+/* Mobile Devices (Under 768px) */
+@media (max-width: 768px) {
+  :root {
+    --container-width: 100%;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  /* Mobile Menu Toggle Logic */
+  .mobile-nav-btn {
+    display: flex;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: var(--header-height);
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    background-color: var(--bg-primary);
+    flex-direction: column;
+    padding: 3rem 2rem;
+    gap: 2rem;
+    transition: var(--transition-smooth);
+    box-shadow: 0 15px 30px rgba(10, 102, 255, 0.05);
+    z-index: 999;
+    align-items: flex-start;
+  }
+  
+  /* Checkbox hack to open mobile menu */
+  .mobile-nav-toggle:checked ~ .nav-menu {
+    left: 0;
+  }
+  
+  .mobile-nav-toggle:checked ~ .mobile-nav-btn span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  
+  .mobile-nav-toggle:checked ~ .mobile-nav-btn span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .mobile-nav-toggle:checked ~ .mobile-nav-btn span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  
+  .header-actions {
+    display: none; /* Hide header CTA button on small screen */
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .network-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-banner {
+    padding: 3.5rem 1.5rem;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER / NAVIGATION
+       ========================================== -->
+  <header class="header-main glass" id="header">
+    <div class="container">
+      <a href="#home" class="logo">
+        <div class="logo-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-brand">Hyper Adz</span>
+          <span class="logo-corp">Multitude Solutions</span>
+        </div>
+      </a>
+      
+      <!-- Mobile navigation toggle -->
+      <input type="checkbox" id="mobile-toggle" class="mobile-nav-toggle">
+      <label for="mobile-toggle" class="mobile-nav-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      
+      <nav class="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#network" class="nav-link">Network</a></li>
+        <li><a href="#why-us" class="nav-link">Why Us</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </nav>
+      
+      <div class="header-actions">
+        <a href="#contact" class="btn btn-primary" style="padding: 0.65rem 1.5rem; font-size: 0.85rem;">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       HERO SECTION
+       ========================================== -->
+  <section class="hero-section" id="home">
+    <div class="abs-shape shape-1"></div>
+    <div class="abs-shape shape-2"></div>
+    
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+          Indoor Advertising Pioneer
+        </div>
+        <h1 class="hero-headline">The Future of <span class="text-gradient">Indoor Digital</span> Advertising</h1>
+        <p class="hero-subheading">Connect your brand with thousands of customers through Coimbatore's largest cloud-connected digital signage network.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">
+            Book Campaign
+            <svg class="hero-cta-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 5"></polyline>
+            </svg>
+          </a>
+          <a href="#network" class="btn btn-secondary">Explore Network</a>
+        </div>
+      </div>
+      
+      <div class="hero-illustration">
+        <div class="hero-canvas">
+          <div class="ill-grid-bg"></div>
+          <div class="ill-circle-accent"></div>
+          
+          <!-- Nodes -->
+          <div class="ill-glow-node node-1 pulse-glow-animate"></div>
+          <div class="ill-glow-node node-2 pulse-glow-animate"></div>
+          <div class="ill-glow-node node-3 pulse-glow-animate"></div>
+          
+          <!-- Screen 1 (Main Screen) -->
+          <div class="ill-screen ill-screen-main float-animate">
+            <div class="screen-header-mock">
+              <div class="screen-dot active"></div>
+              <div class="screen-dot"></div>
+              <div class="screen-dot"></div>
+            </div>
+            <div class="screen-body-mock">
+              <span class="screen-tag-mock">LIVE AD STREAM</span>
+              <h4 class="screen-heading-mock">Engage Hyper-Local Audiences Directly</h4>
+              <div class="screen-ad-creative"></div>
+              <p class="screen-subheading-mock">📍 Brookefields Mall, Coimbatore</p>
+            </div>
+          </div>
+          
+          <!-- Screen 2 (Sub Screen) -->
+          <div class="ill-screen ill-screen-sub float-animate-delay-1">
+            <div class="screen-header-mock">
+              <div class="screen-dot"></div>
+              <div class="screen-dot active"></div>
+              <div class="screen-dot"></div>
+            </div>
+            <div class="screen-body-mock">
+              <span class="screen-tag-mock" style="background-color: var(--secondary);">ACTIVE CAMPAIGN</span>
+              <h4 class="screen-heading-mock" style="font-size: 0.9rem; margin: 0.75rem 0;">Real-Time Impression Metrics</h4>
+              <div class="screen-ad-creative" style="background: linear-gradient(135deg, rgba(46,139,255,0.15) 0%, rgba(94,168,255,0.05) 100%);"></div>
+              <p class="screen-subheading-mock">📍 Prozone Mall, Coimbatore</p>
+            </div>
+          </div>
+          
+          <!-- Floating Metrics Card 1 -->
+          <div class="ill-glass-card ill-card-1 glass float-animate-delay-2">
+            <div class="ill-card-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="ill-card-info">
+              <span class="ill-card-val">2.5M+</span>
+              <span class="ill-card-lbl">Weekly Footfall</span>
+            </div>
+          </div>
+          
+          <!-- Floating Metrics Card 2 -->
+          <div class="ill-glass-card ill-card-2 glass float-animate-delay-1">
+            <div class="ill-card-icon" style="color: var(--secondary); background: rgba(46, 139, 255, 0.1);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <div class="ill-card-info">
+              <span class="ill-card-val">99.9%</span>
+              <span class="ill-card-lbl">Network Uptime</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       TRUST SECTION (STATISTICS)
+       ========================================== -->
+  <section class="trust-section">
+    <div class="container">
+      <div class="stats-grid">
+        
+        <div class="stat-card glass">
+          <div class="stat-number">300+</div>
+          <div class="stat-label">Cloud Connected Screens</div>
+          <div class="stat-desc">Fully operational digital signage assets</div>
+        </div>
+        
+        <div class="stat-card glass">
+          <div class="stat-number">Largest</div>
+          <div class="stat-label">Advertising Network</div>
+          <div class="stat-desc">Comprehensive reach across Coimbatore</div>
+        </div>
+        
+        <div class="stat-card glass">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Campaign Reporting</div>
+          <div class="stat-desc">Transparent impressions and play logs</div>
+        </div>
+        
+        <div class="stat-card glass">
+          <div class="stat-number">Geo-Tagged</div>
+          <div class="stat-label">Campaign Images</div>
+          <div class="stat-desc">Live proof-of-play images with timestamps</div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       ABOUT US SECTION
+       ========================================== -->
+  <section class="about-section section-padding" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-canvas">
+            <div class="about-glow-orb"></div>
+            
+            <div class="about-placeholder-mockup">
+              <div class="mockup-header">
+                <div class="mockup-controls">
+                  <span class="mockup-dot"></span>
+                  <span class="mockup-dot"></span>
+                  <span class="mockup-dot"></span>
+                </div>
+                <div class="mockup-address-bar">hyperadz.com/dashboard</div>
+                <div style="width: 20px;"></div>
+              </div>
+              <div class="mockup-body">
+                <h4 style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--primary);">Network Live Statistics</h4>
+                <div class="mockup-content-grid">
+                  <div>
+                    <div class="mockup-chart-bar filled-1"></div>
+                    <div class="mockup-chart-bar filled-2"></div>
+                    <div class="mockup-chart-bar filled-3"></div>
+                    <div class="mockup-chart-bar filled-4"></div>
+                  </div>
+                  <div style="display: flex; flex-direction: column; justify-content: space-between; border-left: 2px solid var(--border-color); padding-left: 1rem;">
+                    <div>
+                      <span style="font-size: 0.6rem; color: var(--text-light); text-transform: uppercase;">Malls</span>
+                      <h5 style="font-size: 0.9rem; color: var(--text-main);">45%</h5>
+                    </div>
+                    <div>
+                      <span style="font-size: 0.6rem; color: var(--text-light); text-transform: uppercase;">Retail</span>
+                      <h5 style="font-size: 0.9rem; color: var(--text-main);">30%</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-content">
+          <span class="section-tag">About Hyper Adz</span>
+          <h2>Empowering Brands Locally</h2>
+          <p class="about-text-lead">Multitude Solutions is a technology-driven marketing company specializing in Indoor Digital Advertising, Digital Signage Sales, and Digital Signage Rental.</p>
+          <p class="about-text-body">Through our dedicated brand, <strong>Hyper Adz</strong>, we empower brands to engage hyper-local audiences through strategically placed digital screens across high-footfall locations in Coimbatore. We integrate technology and modern visual design to ensure your advertising matches international corporate standards.</p>
+          
+          <div class="about-features">
+            <div class="about-feat-item">
+              <div class="about-feat-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span class="about-feat-text">Prime Commercial Venues</span>
+            </div>
+            
+            <div class="about-feat-item">
+              <div class="about-feat-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span class="about-feat-text">Established 2025 Quality</span>
+            </div>
+            
+            <div class="about-feat-item">
+              <div class="about-feat-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span class="about-feat-text">Dynamic Content Placements</span>
+            </div>
+            
+            <div class="about-feat-item">
+              <div class="about-feat-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span class="about-feat-text">Complete Client Support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SERVICES SECTION
+       ========================================== -->
+  <section class="services-section section-padding section-bg-alt" id="services">
+    <!-- Wave Separator top -->
+    <div class="wave-divider wave-top fill-bg-primary">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+      </svg>
+    </div>
+    
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Core Services</span>
+        <h2>High-Impact Solutions We Offer</h2>
+        <p class="section-desc">From visual hardware acquisition to global digital campaigns, we manage everything under one seamless premium infrastructure.</p>
+      </div>
+      
+      <div class="services-grid">
+        
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3>Indoor Digital Advertising</h3>
+          <p>Display your high-definition video ads across premium locations in Coimbatore, driving local conversions and brand value.</p>
+          <a href="#contact" class="service-link">
+            Learn More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 5"></polyline>
+            </svg>
+          </a>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <h3>Digital Signage Sales</h3>
+          <p>Acquire top-of-the-line premium commercial display units, customized mounting hardware, and internal signage player solutions.</p>
+          <a href="#contact" class="service-link">
+            Learn More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 5"></polyline>
+            </svg>
+          </a>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <h3>Digital Signage Rental</h3>
+          <p>Flexible short-term and long-term rental configurations for trade shows, retail events, malls, and active promotional campaign schedules.</p>
+          <a href="#contact" class="service-link">
+            Learn More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 5"></polyline>
+            </svg>
+          </a>
+        </div>
+        
+        <!-- Service 4 -->
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          <h3>Campaign Analytics</h3>
+          <p>Access precise footfall estimates, conversion tracking logs, campaign performance graphs, and play metrics reports.</p>
+          <a href="#contact" class="service-link">
+            Learn More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 5"></polyline>
+            </svg>
+          </a>
+        </div>
+        
+        <!-- Service 5 -->
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <h3>Cloud Content Management</h3>
+          <p>Instantly update, schedule, and configure dynamic visual slide playlists on active screens remotely using secure cloud terminals.</p>
+          <a href="#contact" class="service-link">
+            Learn More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 5"></polyline>
+            </svg>
+          </a>
+        </div>
+        
+        <!-- Service 6 -->
+        <div class="service-card">
+          <div class="service-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <h3>Brand Promotions</h3>
+          <p>Curated design consulting, strategy formulation, and targeted scheduling to amplify brand identity across prime location networks.</p>
+          <a href="#contact" class="service-link">
+            Learn More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 5"></polyline>
+            </svg>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       NETWORK SECTION
+       ========================================== -->
+  <section class="network-section section-padding" id="network">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Target Venues</span>
+        <h2>Our Advertising Network</h2>
+        <p class="section-desc">Reach your consumers where they shop, dine, work, and relax. Strategic placements optimized for high dwell-time engagement.</p>
+      </div>
+      
+      <div class="network-grid">
+        
+        <!-- Card 1 -->
+        <div class="network-card">
+          <div class="network-card-ill net-ill-mall"></div>
+          <div class="network-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+            </svg>
+          </div>
+          <h4>Shopping Malls</h4>
+          <p>Maximum brand exposure during weekend shopping sprees.</p>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="network-card">
+          <div class="network-card-ill net-ill-retail"></div>
+          <div class="network-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M3 3h18v18H3z"></path>
+              <path d="M21 9H3"></path>
+            </svg>
+          </div>
+          <h4>Premium Retail Stores</h4>
+          <p>Trigger instant buyer behavior right at points of purchase.</p>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="network-card">
+          <div class="network-card-ill net-ill-apt"></div>
+          <div class="network-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M3 21h18"></path>
+              <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+          <h4>Residential Apartments</h4>
+          <p>Consistent, daily impressions within elevator lobby zones.</p>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="network-card">
+          <div class="network-card-ill net-ill-theatre"></div>
+          <div class="network-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 2H2v20h20V2z"></path>
+              <path d="M2 12h20"></path>
+            </svg>
+          </div>
+          <h4>Theatre Lobbies</h4>
+          <p>Captivate consumers during long ticket & snack counter queues.</p>
+        </div>
+        
+        <!-- Card 5 -->
+        <div class="network-card">
+          <div class="network-card-ill net-ill-restaurant"></div>
+          <div class="network-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2v20"></path>
+              <path d="M18 8a6 6 0 0 0-12 0"></path>
+            </svg>
+          </div>
+          <h4>Restaurants</h4>
+          <p>Premium placements inside standard high dwell dining spaces.</p>
+        </div>
+        
+        <!-- Card 6 -->
+        <div class="network-card">
+          <div class="network-card-ill net-ill-cafe"></div>
+          <div class="network-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            </svg>
+          </div>
+          <h4>Cafes</h4>
+          <p>Engage tech professionals and students during casual meetups.</p>
+        </div>
+        
+        <!-- Card 7 -->
+        <div class="network-card">
+          <div class="network-card-ill net-ill-gym"></div>
+          <div class="network-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <rect x="6" y="3" width="12" height="18" rx="2"></rect>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+            </svg>
+          </div>
+          <h4>Gyms</h4>
+          <p>Promote health, wellness, and youth lifestyle products effectively.</p>
+        </div>
+        
+        <!-- Card 8 -->
+        <div class="network-card">
+          <div class="network-card-ill net-ill-salon"></div>
+          <div class="network-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="6" cy="6" r="3"></circle>
+              <circle cx="6" cy="18" r="3"></circle>
+              <line x1="9.8" y1="8.5" x2="20" y2="17"></line>
+              <line x1="9.8" y1="15.5" x2="20" y2="7"></line>
+            </svg>
+          </div>
+          <h4>Salons</h4>
+          <p>Target premium consumers looking for beauty and luxury brands.</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       WHY CHOOSE US
+       ========================================== -->
+  <section class="why-us-section section-padding section-bg-alt" id="why-us">
+    <!-- Wave Separator top -->
+    <div class="wave-divider wave-top fill-bg-primary">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+      </svg>
+    </div>
+    
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Value Proposition</span>
+        <h2>Why Choose Hyper Adz</h2>
+        <p class="section-desc">We build enterprise-grade indoor digital advertising frameworks with premium infrastructure to guarantee result deliverability.</p>
+      </div>
+      
+      <div class="why-grid">
+        
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+            </svg>
+          </div>
+          <h4>Largest Local Network</h4>
+          <p>Over 300+ connected displays spread throughout prime residential, leisure, and shopping spaces in Coimbatore.</p>
+        </div>
+        
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <h4>Prime Premium Locations</h4>
+          <p>We target premium malls, elite cafés, residential apartments, gyms, and commercial lobbies to capture premium spending power.</p>
+        </div>
+        
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polygon points="12 2 2 22 12 17 22 22 12 2"></polygon>
+            </svg>
+          </div>
+          <h4>Geo-Tagged Reports</h4>
+          <p>Stay assured with live proof-of-play. Real-time GPS-stamped dashboard reports verify actual display campaign execution.</p>
+        </div>
+        
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <h4>Ethical Business Policies</h4>
+          <p>We pride ourselves on transparent pricing modules, strict timeline adherence, and completely honest customer relationships.</p>
+        </div>
+        
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </div>
+          <h4>Client Satisfaction First</h4>
+          <p>Dedicated account executives customize layouts, target profiles, and update content lists rapidly for standard campaigns.</p>
+        </div>
+        
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M23 12a11 11 0 1 1-22 0 11 11 0 0 1 22 0z"></path>
+            </svg>
+          </div>
+          <h4>Real-Time Sync Updates</h4>
+          <p>Instant visual changes pushed remotely via secure content tunnels. Keep your active advertising updated within minutes.</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       HOW IT WORKS
+       ========================================== -->
+  <section class="how-it-works-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Step by Step</span>
+        <h2>How It Works</h2>
+        <p class="section-desc">Launch your digital campaign seamlessly with our straightforward client execution workflow.</p>
+      </div>
+      
+      <div class="timeline-container">
+        <div class="timeline-line">
+          <div class="timeline-line-fill"></div>
+        </div>
+        
+        <div class="timeline-grid">
+          
+          <!-- Step 1 -->
+          <div class="timeline-step active">
+            <div class="timeline-badge">1</div>
+            <h4>Plan Campaign</h4>
+            <p>Select target venues, duration, design layouts, and configure target impression objectives.</p>
+          </div>
+          
+          <!-- Step 2 -->
+          <div class="timeline-step active">
+            <div class="timeline-badge">2</div>
+            <h4>Display Ads</h4>
+            <p>Content is pushed live instantly across our cloud-connected digital screen assets.</p>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="timeline-step active">
+            <div class="timeline-badge">3</div>
+            <h4>Reach Audience</h4>
+            <p>Capture premium attention during long retail dwell times inside malls and cafes.</p>
+          </div>
+          
+          <!-- Step 4 -->
+          <div class="timeline-step">
+            <div class="timeline-badge">4</div>
+            <h4>Campaign Report</h4>
+            <p>Receive comprehensive geo-tagged validation photo arrays and impression charts.</p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FEATURE SECTION (TECH AND DETAILS)
+       ========================================== -->
+  <section class="features-details-section section-padding section-bg-alt">
+    <!-- Wave Separator top -->
+    <div class="wave-divider wave-top fill-bg-primary">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+      </svg>
+    </div>
+    
+    <div class="container">
+      <div class="feature-grid">
+        <div class="feature-content">
+          <span class="section-tag">Smart Architecture</span>
+          <h2>Technology That Delivers Real Results</h2>
+          <p>Underpinned by secure IoT connectivity, our hardware platforms provide active cloud terminal communication to secure display verification metrics.</p>
+          
+          <div class="feature-list">
+            
+            <div class="feature-item">
+              <div class="feature-item-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                </svg>
+              </div>
+              <div class="feature-item-details">
+                <h4>Cloud Connected Displays</h4>
+                <p>Remotely synced content infrastructure avoids offline delays or manual flash-drive replacement.</p>
+              </div>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-item-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                </svg>
+              </div>
+              <div class="feature-item-details">
+                <h4>Targeted Content Scheduling</h4>
+                <p>Configure specific advertisements to display during peak traffic hours, maximizing targeted conversions.</p>
+              </div>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-item-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <div class="feature-item-details">
+                <h4>Real-Time Performance Logs</h4>
+                <p>Extract impressions data and diagnostic log files on request through secure system dashboards.</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="tech-visual">
+          <div class="tech-canvas float-animate">
+            <div class="tech-header-mockup">
+              <span class="tech-title-mockup">Cloud Terminal - Active Sync</span>
+              <div class="tech-cloud-status">
+                <span class="tech-status-dot"></span>
+                ONLINE
+              </div>
+            </div>
+            <div class="tech-body-mockup">
+              <div class="tech-bar-chart">
+                <div class="tech-chart-row">
+                  <span class="tech-label-chart">Mall Displays</span>
+                  <div class="tech-progress-outer">
+                    <div class="tech-progress-inner" style="width: 85%;"></div>
+                  </div>
+                </div>
+                <div class="tech-chart-row">
+                  <span class="tech-label-chart">Café Units</span>
+                  <div class="tech-progress-outer">
+                    <div class="tech-progress-inner" style="width: 60%; background: var(--accent);"></div>
+                  </div>
+                </div>
+                <div class="tech-chart-row">
+                  <span class="tech-label-chart">Theater Lobbies</span>
+                  <div class="tech-progress-outer">
+                    <div class="tech-progress-inner" style="width: 75%; background: var(--primary);"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 1rem; border-radius: 8px;">
+                <span style="font-size: 0.6rem; color: var(--text-light); text-transform: uppercase;">Active Campaign</span>
+                <p style="color: #FFFFFF; font-size: 0.85rem; font-weight: 600; margin-top: 4px;">Dynamic Content Distribution System</p>
+              </div>
+            </div>
+            <div class="tech-footer-mockup">
+              Secure IoT Handshake Complete - 256bit SSL
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CALL TO ACTION (CTA)
+       ========================================== -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <div class="cta-banner">
+        <h2>Ready to Grow Your Brand?</h2>
+        <p>Book your digital campaign today and experience the power of hyper-local visual advertising in Coimbatore.</p>
+        <div class="cta-actions">
+          <a href="mailto:info@multitudesolutions.in" class="btn btn-primary">Book Your Campaign Now</a>
+          <a href="#services" class="btn btn-secondary">Explore Our Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-brand-section">
+          <a href="#home" class="logo">
+            <div class="logo-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <span class="logo-brand">Hyper Adz</span>
+              <span class="logo-corp">Multitude Solutions</span>
+            </div>
+          </a>
+          <p class="footer-desc">Empowering regional brand value through premium, cloud-synced visual network advertising spaces across Coimbatore.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#network">Our Network</a></li>
+            <li><a href="#why-us">Why Choose Us</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Indoor Advertising</a></li>
+            <li><a href="#services">Digital Signage Sales</a></li>
+            <li><a href="#services">Signage Rentals</a></li>
+            <li><a href="#services">Campaign Analytics</a></li>
+            <li><a href="#services">Cloud Playlist Management</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Corporate Info</h4>
+          <div class="footer-info">
+            <div class="footer-info-item">
+              <div class="footer-info-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="footer-info-val">
+                <strong>Corporate Address</strong>
+                Multitude Solutions,<br>
+                Coimbatore, Tamil Nadu, India
+              </div>
+            </div>
+            <div class="footer-info-item">
+              <div class="footer-info-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="footer-info-val">
+                <strong>Email Address</strong>
+                info@multitudesolutions.in
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      <div class="footer-bottom">
+        <span class="footer-gst">GSTIN: 33AIWPM0841K1ZX</span>
+        <span class="footer-copyright">&copy; 2026 Multitude Solutions. Established 2025. All Rights Reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

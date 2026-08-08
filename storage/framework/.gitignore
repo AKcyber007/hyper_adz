@@ -1,0 +1,13 @@
+config.php
+routes.php
+events.scanned.php
+routes.scanned.php
+down
+*.key
+*.lock
+*
+!cache/
+!sessions/
+!testing/
+!views/
+!.gitignore
