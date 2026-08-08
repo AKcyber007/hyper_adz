@@ -32,11 +32,7 @@ RUN composer install --no-dev --optimize-autoloader --no-scripts --no-interactio
 # Install Node dependencies and build assets
 RUN npm install && npm run build
 
-# Cache Laravel config/routes/views
-RUN php artisan config:cache \
-    && php artisan route:cache \
-    && php artisan view:cache
 
 EXPOSE 8080
 
-CMD sh -c "php -S 0.0.0.0:${PORT:-8080} -t public"
+CMD sh -c "php artisan optimize:clear && php -S 0.0.0.0:${PORT:-8080} -t public"
