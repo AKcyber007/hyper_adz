@@ -42,6 +42,14 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'advertiser' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        'location_partner' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
     ],
 
     /*

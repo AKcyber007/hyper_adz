@@ -12,9 +12,9 @@
                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('services') ? 'active' : '' }}" href="{{ route('services') }}">Services</a></li>
                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('network') ? 'active' : '' }}" href="{{ route('network') }}">Network</a></li>
                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('why') ? 'active' : '' }}" href="{{ route('why') }}">Why Hyper Adz</a></li>
-                <li class="nav-item"><a class="nav-link {{ request()->routeIs('partner') ? 'active' : '' }}" href="{{ route('partner') }}">Partner</a></li>
                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a></li>
-                <li class="nav-item ms-lg-3"><a class="btn btn-primary nav-cta" href="{{ route('contact') }}">Advertise with Us</a></li>
+                <li class="nav-item ms-lg-3"><a class="btn btn-ghost" href="{{ route('login') }}">Login</a></li>
+                <li class="nav-item ms-lg-2"><a class="btn btn-primary nav-cta" href="{{ route('contact', ['form' => 'advertiser']) }}">Advertise with Us</a></li>
             </ul>
         </div>
     </div>

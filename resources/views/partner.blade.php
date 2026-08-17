@@ -124,23 +124,26 @@
 
                 <div class="col-lg-7" data-aos="fade-left">
                     <form class="contact-form" id="partner-form">
+                        @csrf
+                        <div id="partner-alert" class="alert d-none mb-4 rounded-3 text-xs" role="alert"></div>
+                        
                         <h3 class="mb-4">Venue Partner Enquiry Form</h3>
                         <div class="row g-4">
                             <div class="col-md-6">
-                                <label for="partner-name">Your Name</label>
-                                <input class="form-control" id="partner-name" type="text" placeholder="Full Name">
+                                <label for="partner-name">Your Name <span class="text-danger">*</span></label>
+                                <input class="form-control" id="partner-name" name="name" type="text" placeholder="Full Name" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="partner-phone">Phone Number</label>
-                                <input class="form-control" id="partner-phone" type="tel" placeholder="+91 99000 00000">
+                                <label for="partner-phone">Phone Number <span class="text-danger">*</span></label>
+                                <input class="form-control" id="partner-phone" name="phone" type="tel" placeholder="+91 99000 00000" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="partner-email">Email Address</label>
-                                <input class="form-control" id="partner-email" type="email" placeholder="you@example.com">
+                                <label for="partner-email">Email Address <span class="text-danger">*</span></label>
+                                <input class="form-control" id="partner-email" name="email" type="email" placeholder="you@example.com" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="partner-venue-type">Venue Type</label>
-                                <select class="form-select" id="partner-venue-type">
+                                <select class="form-select" id="partner-venue-type" name="venue_type">
                                     <option value="">Select category</option>
                                     <option>Restaurant / Cafe / Bakery</option>
                                     <option>Gym / Fitness Studio</option>
@@ -153,12 +156,12 @@
                                 </select>
                             </div>
                             <div class="col-12">
-                                <label for="partner-venue-name">Venue Name & Address</label>
-                                <input class="form-control" id="partner-venue-name" type="text" placeholder="Venue name and area in Coimbatore">
+                                <label for="partner-venue-name">Venue Name & Address <span class="text-danger">*</span></label>
+                                <input class="form-control" id="partner-venue-name" name="venue_name" type="text" placeholder="Venue name and area in Coimbatore" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="partner-daily-footfall">Daily Footfall (approx.)</label>
-                                <select class="form-select" id="partner-daily-footfall">
+                                <select class="form-select" id="partner-daily-footfall" name="daily_footfall">
                                     <option value="">Select range</option>
                                     <option>Under 50</option>
                                     <option>50 – 150</option>
@@ -168,7 +171,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="partner-screens">Number of screens you can accommodate</label>
-                                <select class="form-select" id="partner-screens">
+                                <select class="form-select" id="partner-screens" name="screens_count">
                                     <option>1 screen</option>
                                     <option>2 screens</option>
                                     <option>3+ screens</option>
@@ -177,10 +180,12 @@
                             </div>
                             <div class="col-12">
                                 <label for="partner-message">Additional Information</label>
-                                <textarea class="form-control" id="partner-message" rows="3" placeholder="Tell us more about your venue, peak hours, or any questions you have..."></textarea>
+                                <textarea class="form-control" id="partner-message" name="message" rows="3" placeholder="Tell us more about your venue, peak hours, or any questions you have..."></textarea>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-primary btn-lg mt-4" onclick="window.location.href='mailto:support@hyperadz.in?subject=Location Partner Enquiry from ' + document.getElementById('partner-name').value"><i class="bi bi-send"></i> Submit Partner Enquiry</button>
+                        <button type="submit" class="btn btn-primary btn-lg mt-4" id="partner-submit-btn">
+                            <i class="bi bi-send"></i> <span id="partner-submit-text">Submit Partner Enquiry</span>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -190,3 +195,81 @@
 
 <x-cta title="Join the Hyper Adz partner network." text="Earn passive income from your venue while contributing to a growing hyper-local advertising ecosystem in Tamil Nadu." />
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('partner-form');
+        const alertBox = document.getElementById('partner-alert');
+        const submitBtn = document.getElementById('partner-submit-btn');
+        const submitText = document.getElementById('partner-submit-text');
+
+        if (form) {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                submitBtn.disabled = true;
+                submitText.textContent = 'Submitting...';
+                alertBox.className = 'alert d-none';
+
+                // Concatenate message parameters
+                const venueType = document.getElementById('partner-venue-type').value;
+                const venueName = document.getElementById('partner-venue-name').value;
+                const footfall = document.getElementById('partner-daily-footfall').value;
+                const screens = document.getElementById('partner-screens').value;
+                const additional = document.getElementById('partner-message').value;
+
+                let fullMessage = `Venue Name: ${venueName}\n`;
+                if(venueType) fullMessage += `Venue Type: ${venueType}\n`;
+                if(footfall)  fullMessage += `Approx Daily Footfall: ${footfall}\n`;
+                if(screens)   fullMessage += `Accommodate Screens: ${screens}\n`;
+                if(additional) fullMessage += `Additional Details: ${additional}`;
+
+                const formData = {
+                    _token: form.querySelector('input[name="_token"]').value,
+                    name: document.getElementById('partner-name').value,
+                    phone: document.getElementById('partner-phone').value,
+                    email: document.getElementById('partner-email').value,
+                    company_name: venueName,
+                    lead_type: 'location_partner',
+                    message: fullMessage,
+                    source: 'partner_page'
+                };
+
+                fetch('{{ route("leads.store") }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => response.json().then(data => ({ status: response.status, body: data })))
+                .then(res => {
+                    submitBtn.disabled = false;
+                    submitText.textContent = 'Submit Partner Enquiry';
+
+                    if (res.status === 201) {
+                        alertBox.className = 'alert alert-success p-3 rounded-3';
+                        alertBox.textContent = res.body.message;
+                        form.reset();
+                    } else {
+                        alertBox.className = 'alert alert-danger p-3 rounded-3';
+                        if (res.body.errors) {
+                            alertBox.textContent = Object.values(res.body.errors).flat().join(' ');
+                        } else {
+                            alertBox.textContent = res.body.message || 'An error occurred. Please check details.';
+                        }
+                    }
+                })
+                .catch(error => {
+                    submitBtn.disabled = false;
+                    submitText.textContent = 'Submit Partner Enquiry';
+                    alertBox.className = 'alert alert-danger p-3 rounded-3';
+                    alertBox.textContent = 'Network error. Please try again later.';
+                });
+            });
+        }
+    });
+</script>
+@endpush

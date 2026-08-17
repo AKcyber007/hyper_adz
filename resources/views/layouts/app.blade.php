@@ -19,7 +19,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $title }}">
     <meta name="twitter:description" content="{{ $description }}">
-    <link rel="icon" href="{{ asset('images/favicon.svg') }}" type="image/svg+xml">
+    <link rel="icon" href="{{ isset($globalBranding) && $globalBranding->favicon_path ? asset('storage/'.$globalBranding->favicon_path) : asset('images/favicon.svg') }}" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..0,800;1,300..1,800&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,14 +32,14 @@
         {!! json_encode([
             '@context' => 'https://schema.org',
             '@type' => 'Organization',
-            'name' => 'Hyper Adz',
+            'name' => isset($globalSettings) && $globalSettings->company_name ? $globalSettings->company_name : 'Hyper Adz',
             'url' => url('/'),
-            'logo' => asset('images/hyperadz-logo-square.svg'),
-            'email' => 'connect.hyperadz@gmail.com',
-            'telephone' => '+91 99620 99110',
+            'logo' => isset($globalBranding) && $globalBranding->logo_path ? asset('storage/'.$globalBranding->logo_path) : asset('images/hyperadz-logo-square.svg'),
+            'email' => isset($globalSettings) && $globalSettings->primary_email ? $globalSettings->primary_email : 'connect.hyperadz@gmail.com',
+            'telephone' => isset($globalSettings) && $globalSettings->phone ? $globalSettings->phone : '+91 99620 99110',
             'address' => [
                 '@type' => 'PostalAddress',
-                'streetAddress' => 'Ganapathy',
+                'streetAddress' => isset($globalSettings) && $globalSettings->address ? $globalSettings->address : 'Ganapathy',
                 'addressLocality' => 'Coimbatore',
                 'postalCode' => '641006',
                 'addressCountry' => 'IN',
@@ -60,7 +60,11 @@
     <script src="{{ asset('js/hyperadz.js') }}"></script>
 
     {{-- WhatsApp Floating CTA --}}
-    <a href="https://wa.me/919962099110?text=Hi%20Hyper%20Adz%2C%20I%27d%20like%20to%20know%20more%20about%20your%20indoor%20advertising%20solutions." 
+    @php
+        $waNumber = isset($globalSettings) && $globalSettings->whatsapp ? preg_replace('/[^0-9]/', '', $globalSettings->whatsapp) : '919962099110';
+        $waMessage = urlencode("Hi " . (isset($globalSettings) && $globalSettings->company_name ? $globalSettings->company_name : 'Hyper Adz') . ", I'd like to know more about your indoor advertising solutions.");
+    @endphp
+    <a href="https://wa.me/{{ $waNumber }}?text={{ $waMessage }}" 
        target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
         <i class="bi bi-whatsapp"></i>
         <span>Chat with us</span>

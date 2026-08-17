@@ -1,0 +1,64 @@
+# Comprehensive System Testing Plan
+
+This document outlines the testing strategy to ensure all functionalities in the Hyper Adz platform are working flawlessly, covering public access, role-based access controls, lead generation, admin operations, and multi-user workflows.
+
+## User Review Required
+
+> [!IMPORTANT]
+> Since we are dealing with comprehensive end-to-end testing, the best approach in Laravel is to write robust **Automated Feature Tests**. This ensures we catch not just current bugs, but also prevent future regressions. We will also utilize a browser subagent for visual validation of key flows.
+> 
+> Please review the test cases outlined below and let me know if there are any specific edge cases or additional workflows you want to include!
+
+## Open Questions
+
+> [!NOTE]
+> 1. Do you want me to write and execute these tests using Laravel's built-in testing framework (PHPUnit/Pest), which simulates the requests instantly?
+> 2. For testing "lag" or performance, would you like me to write a basic load test script, or just ensure the database queries are optimized during the feature tests?
+
+## Proposed Changes
+
+We will create/update the following Test suites in the `tests/Feature/` directory to cover your requirements.
+
+### 1. Public Website & Redirections
+- **`PublicWebsiteTest.php`**
+  - [NEW] Test all public routes (`/`, `/about`, `/contact`, etc.) to ensure they return a 200 OK status.
+  - [NEW] Verify that any outdated or protected links correctly redirect users (e.g., redirecting unauthenticated users to `/login`).
+
+### 2. Lead Generation & Forms
+- **`PublicLeadSubmissionTest.php`**
+  - [NEW] Simulate submitting the Advertiser Enquiry form with valid/invalid data.
+  - [NEW] Simulate submitting the Location Partner form.
+  - [NEW] Assert that the leads are correctly saved in the database.
+  - [NEW] Assert that an Admin user can view these exact leads in the Admin Panel Lead section.
+
+### 3. Admin Profile Management
+- **`AdminSettingsTest.php`**
+  - [NEW] Test changing the Admin's username and saving it.
+  - [NEW] Test updating the Admin's password with correct validation rules (matching confirmation, minimum length).
+  - [NEW] Verify that the Admin can log back in with the newly updated password.
+
+### 4. Admin Panel Core Functionalities
+- **`AdminFullWorkflowTest.php`**
+  - [NEW] Test creating new Location Partners and Advertisers as an Admin.
+  - [NEW] Test adding a new Location and associating it with a Partner.
+  - [NEW] Test updating existing Locations and approving Location Partner accounts.
+  - [NEW] Re-verify the Campaign Workflow (from creation to approval to scheduling).
+
+### 5. Multi-User Workflow Simulation
+- **`MultiUserWorkflowTest.php`**
+  - [NEW] Create 5 distinct Location Partners and 5 Advertisers programmatically.
+  - [NEW] Simulate them logging into their respective panels simultaneously (using loops in the test).
+  - [NEW] Simulate advertisers creating multiple campaigns across different locations.
+  - [NEW] Simulate partners approving/viewing the screens.
+  - [NEW] Monitor for any 500 errors or database lock exceptions during rapid data insertion to ensure the business workflow is perfectly solid.
+
+## Verification Plan
+
+### Automated Tests
+Once the tests are written, I will execute the entire test suite using:
+- `php artisan test`
+
+This will give us a complete pass/fail report on every single functionality in the system.
+
+### Manual Verification
+- After automated tests pass, I will spin up a browser subagent to visually verify the frontend lead form submission and admin panel visual updates to guarantee everything looks correct on the screen.

@@ -19,19 +19,48 @@
 
     <section class="section-pad pt-5">
         <div class="container">
+            <!-- Advertiser Services -->
+            <h2 class="h4 fw-bold mb-4" style="color: #0b1c3f;">For Advertisers</h2>
+            <div class="row g-4 mb-5">
+                <div class="col-md-6 col-xl-6">
+                    <x-service-card icon="bi-badge-ad" title="Indoor Digital Advertising" text="Place campaigns on indoor screens across high-footfall venues and retail environments." label="Start Advertising" link="{{ route('contact') }}" />
+                </div>
+                <div class="col-md-6 col-xl-6">
+                    <x-service-card icon="bi-megaphone" title="Targeted Brand Promotion" text="Create memorable visibility for your brand in audience-rich indoor spaces." label="Plan Campaign" link="{{ route('contact') }}" />
+                </div>
+            </div>
+
+            <!-- Location Partner Services -->
+            <h2 class="h4 fw-bold mb-4" style="color: #0b1c3f;">For Location Partners</h2>
+            <div class="row g-4 mb-5">
+                <div class="col-md-6 col-xl-6">
+                    <x-service-card icon="bi-building-up" title="Host a Screen for Passive Income" text="Turn your venue's footfall into passive income by hosting our premium displays." label="Become a Partner" link="{{ route('contact', ['form' => 'partner']) }}" />
+                </div>
+                <div class="col-md-6 col-xl-6">
+                    <x-service-card icon="bi-cloud-check" title="Managed Screen Network" text="We install, maintain, and manage the cloud-connected screens at zero cost to you." label="Learn More" link="{{ route('contact', ['form' => 'partner']) }}" />
+                </div>
+            </div>
+
+            <!-- Digital Signage Buyer Services -->
+            <h2 class="h4 fw-bold mb-4" style="color: #0b1c3f;">For Digital Signage Buyers</h2>
+            <div class="row g-4 mb-5">
+                <div class="col-md-6 col-xl-6">
+                    <x-service-card icon="bi-display" title="Digital Signage Sales" text="Source modern commercial display systems for your own business communications." label="Get a Quote" link="{{ route('enquiry') }}" />
+                </div>
+                <div class="col-md-6 col-xl-6">
+                    <x-service-card icon="bi-calendar2-event" title="Digital Signage Rental" text="Rent screens for product launches, activations, events, and seasonal promotions." label="Enquire Now" link="{{ route('enquiry') }}" />
+                </div>
+            </div>
+
+            <!-- Sales Partner Services -->
+            <h2 class="h4 fw-bold mb-4" style="color: #0b1c3f;">For Sales Partners</h2>
             <div class="row g-4">
-                @foreach([
-                    ['bi-badge-ad', 'Indoor Digital Advertising', 'Place campaigns on indoor screens across high-footfall venues and retail environments.'],
-                    ['bi-display', 'Digital Signage Sales', 'Source modern commercial display systems for businesses and venue partners.'],
-                    ['bi-calendar2-event', 'Digital Signage Rental', 'Rent screens for product launches, activations, events, and seasonal promotions.'],
-                    ['bi-bar-chart-line', 'Campaign Analytics', 'Prepare campaigns for clear performance reporting, summaries, and geo tagged validation.'],
-                    ['bi-cloud-check', 'Cloud Connected Displays', 'Plan screen networks that can be updated and managed centrally.'],
-                    ['bi-megaphone', 'Brand Promotion', 'Create memorable visibility for brands in audience-rich indoor spaces.']
-                ] as [$icon, $title, $text])
-                    <div class="col-md-6 col-xl-4">
-                        <x-service-card :icon="$icon" :title="$title" :text="$text" label="Request Plan" />
-                    </div>
-                @endforeach
+                <div class="col-md-6 col-xl-6">
+                    <x-service-card icon="bi-person-lines-fill" title="Advertiser Sourcing" text="Bring in advertisers to our platform and earn a recurring commission on campaigns." label="Partner With Us" link="{{ route('enquiry') }}" />
+                </div>
+                <div class="col-md-6 col-xl-6">
+                    <x-service-card icon="bi-shop" title="Location Sourcing" text="Help us expand our network by onboarding new premium venues and earn incentives." label="Start Earning" link="{{ route('enquiry') }}" />
+                </div>
             </div>
         </div>
     </section>

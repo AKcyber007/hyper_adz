@@ -1,0 +1,50 @@
+# Advertiser Campaign Workflow Task List
+
+## 1. Database Migrations
+- `[x]` Create and run `add_payment_and_report_fields_to_campaigns_table` migration.
+
+## 2. Laravel Scheduler
+- `[x]` Create `app/Console/Commands/ProcessCampaignStatuses.php`.
+- `[x]` Register command in `routes/console.php`.
+
+## 3. Advertiser Backend (`PortalController`)
+- `[x]` Update `storeRequest` (fix budget calculation, handle draft/submit actions).
+- `[x]` Implement `editRequest` and `updateRequest` (for drafts).
+- `[x]` Implement `resubmitRequest` (for rejected campaigns).
+- `[x]` Implement `downloadReport`.
+
+## 4. Admin Backend (`CampaignController`)
+- `[x]` Update `index` to handle status filters.
+- `[x]` Implement `startReview`.
+- `[x]` Implement `approve` (set payment due date and amount).
+- `[x]` Implement `confirmPayment`.
+- `[x]` Implement `uploadReport`.
+- `[x]` Implement `byAdvertiser` and `byLocation`.
+
+## 5. Advertiser Views
+- `[x]` Update `create.blade.php` (two buttons, active locations, correct cost calculator).
+- `[x]` Update `my-requests.blade.php` (new status badges, edit/resubmit buttons).
+- `[x]` Create `edit.blade.php` (for drafts).
+- `[x]` Update `show.blade.php` (status stepper, payment section, report section, rejection feedback).
+- `[x]` Update `dashboard.blade.php` (live stats, recent campaigns).
+
+## 6. Admin Views
+- `[x]` Update `requests/index.blade.php` (tabs, columns).
+- `[x]` Update `requests/show.blade.php` (status stepper, action buttons for Start Review, Approve, Confirm Payment, Upload Report, Reject).
+- `[x]` Create `advertisers/campaigns.blade.php` (campaign history).
+- `[x]` Update `locations/show.blade.php` (campaigns running at location).
+
+## 7. Location Partner Panel
+- `[x]` Update `partner/dashboard.blade.php` (running campaigns widget).
+- `[x]` Update `partner/locations/show.blade.php` (campaigns running at location).
+- `[x]` Update `Partner/LocationController` with campaigns in `show()` method.
+
+## 8. Routes
+- `[x]` Add new Advertiser routes (in previous steps).
+- `[x]` Add new Admin routes (`advertisers/{id}/campaigns` and `locations/{id}/show`).
+- `[x]` Add new Partner routes (already resource routes).
+
+## 9. Sidebar Updates
+- `[x]` Update Advertiser sidebar.
+- `[x]` Update Admin sidebar.
+- `[x]` Update Partner sidebar.

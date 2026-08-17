@@ -27,7 +27,9 @@
                     ['04', 'bi-gem', 'Premium Locations', 'Target customers where they spend their leisure time: cafes, malls, gyms.'],
                     ['05', 'bi-receipt', 'Transparent Pricing', 'Flexible slots built on clear rates per screen category.'],
                     ['06', 'bi-shield-check', 'Ethical Business', 'Commitments you can trust with verified screen uptimes.'],
-                    ['07', 'bi-heart', 'Complete Client Satisfaction', 'Service designed around planning support, creative approval, and campaign reports.']
+                    ['07', 'bi-heart', 'Complete Client Satisfaction', 'Service designed around planning support, creative approval, and campaign reports.'],
+                    ['08', 'bi-shop', 'Custom Signage Solutions', 'Buy or rent premium screens to modernize your own commercial space.'],
+                    ['09', 'bi-briefcase', 'Lucrative Partnerships', 'Earn recurring commissions by expanding our advertiser or location network.']
                 ] as [$num, $icon, $title, $copy])
                     <article class="why-card" data-aos="fade-up">
                         <div class="d-flex justify-content-between align-items-center mb-3">

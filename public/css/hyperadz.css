@@ -1881,3 +1881,26 @@ main > div.bg-grid-pattern:first-child {
     background: linear-gradient(180deg, rgba(10, 22, 40, 0.35) 0%, rgba(10, 22, 40, 0.6) 100%);
     z-index: 1;
 }
+
+/* Custom Dropdown Styling */
+.site-nav .dropdown-menu {
+    border-radius: 16px;
+    padding: 10px;
+    min-width: 220px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35) !important;
+    border: 1px solid #1E293B !important;
+}
+.site-nav .dropdown-item {
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+.site-nav .dropdown-item:hover {
+    background-color: var(--ha-blue) !important;
+    color: #FFF !important;
+    transform: translateX(3px);
+}
+.site-nav .dropdown-item:hover i {
+    color: #FFF !important;
+}
+
