@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libonig-dev \
     libxml2-dev \
-    && docker-php-ext-install zip mbstring fileinfo pdo \
+    && docker-php-ext-install zip mbstring fileinfo pdo pdo_mysql \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Node.js 20 for Vite/npm build
